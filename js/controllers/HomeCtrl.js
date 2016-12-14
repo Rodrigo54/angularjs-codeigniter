@@ -1,27 +1,31 @@
-angular
-      .module('myApp')
-      .controller('HomeCtrl' , HomeCtrl);
+(function() {
+    'use strict';
 
-HomeCtrl.$inject = ["$scope","$http","Usuario","$location", "dados"];
+    angular
+        .module('myApp')
+        .controller('HomeCtrl' , HomeCtrl);
 
-function HomeCtrl($scope, $http, Usuario, $location, dados) {
+    HomeCtrl.$inject = ["$scope","$http","Usuario","$location", "dados"];
 
-  var self = this;
-  self.itens = [];
-  $scope.usuario = Usuario.getDados();
-  if (typeof dados.message !== 'undefined') {
-    self.message = dados.message;
-  }
-  else{
-    self.itens = dados;
-  }
+    function HomeCtrl($scope, $http, Usuario, $location, dados) {
 
-  self.sair = function(){
-    $http.get('api/autenticador/sair', self.user).then(function(response){
-      $location.path('/');
-    }, function(errResponse){
-      console.log(errResponse);
-    });
-  }
+      var vm = this;
+      vm.itens = {};
+      $scope.usuario = Usuario.getDados();
+      if (typeof dados.message !== 'undefined') {
+        vm.message = dados.message;
+      }
+      else{
+        vm.itens = dados;
+      }
 
-}
+      vm.sair = function(){
+        $http.get('api/autenticador/sair', vm.user).then(function(response){
+          $location.path('/');
+        }, function(errResponse){
+          console.log(errResponse);
+        });
+      }
+
+    }
+})();
