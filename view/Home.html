@@ -1,0 +1,29 @@
+<md-content flex class="md-padding" layout-xs="column" layout-fill>
+  <md-card layout-align="center center">
+      <md-card-content>
+      <h1>Hello {{usuario.nome}}!</h1>
+        <md-input-container class="md-headline">
+          <label>Nome:</label>
+          <input type="text" ng-model="usuario.nome" placeholder="Enter a name here">
+        </md-input-container>
+        <md-button ng-click="vm.sair()" style="width: 100%" class="md-raised md-accent">Sair</md-button>
+      </md-card-content>
+  </md-card>
+  <div layout="column">
+    <md-card ng-repeat='todo in vm.itens' flex>
+      <md-card-content>
+      <div>
+        <p><b>Titulo:</b> {{todo.titulo}}</p>
+        <p><b>Palestrante:</b> {{todo.palestrante}}</p>
+        <p><b>Descrição:</b> {{todo.descricao}}</p>
+        <p ng-if="todo.hobbies"><b>Hobbies:</b> {{todo.hobbies}}</p>
+      </div>
+      </md-card-content>
+    </md-card>
+    <md-card ng-show="vm.message">
+      <md-card-content>
+        <h3>{{vm.message}}</h3>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>

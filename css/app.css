@@ -1,0 +1,6 @@
+md-content.md-default-theme, md-content{
+  background-color: transparent;
+}
+div[ng-view] {
+  background-color: #CFD8DC;
+}

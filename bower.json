@@ -1,0 +1,24 @@
+{
+  "name": "angularjs",
+  "authors": [
+    "Rodrigo Alves <rodrigo54mix@gmail.com>"
+  ],
+  "description": "sistema para aprender mais",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.9",
+    "angular-material": "^1.1.1",
+    "angular-route": "^1.5.9"
+  }
+}

@@ -1,0 +1,35 @@
+<md-content layout="row" class="md-padding">
+  <md-card flex-offset-gt-xs="33" flex-gt-xs="33">
+    <md-card-content>
+    <form name="loginForm" ng-submit="vm.submit()" novalidate>
+      <h1 layout="row" layout-align="center">Login</h1>
+      <md-input-container md-is-error="vm.erro" class="md-icon-float md-block">
+        <!-- Use floating label instead of placeholder -->
+        <label>Email</label>
+        <md-icon md-font-icon="material-icons">account_circle</md-icon>
+        <input name="email" required ng-model="vm.user.email" type="email">
+        <div ng-messages="loginForm.email.$error" ng-if="loginForm.email.$invalid || loginForm.$submitted">
+          <div ng-message="required">Esse campo é requerido.</div>
+          <div ng-message="email">Digite um email valido</div>
+        </div>
+      </md-input-container>
+      <md-input-container md-is-error="vm.erro" class="md-icon-float md-block">
+        <!-- Use floating label instead of placeholder -->
+        <label>Senha</label>
+        <md-icon md-font-icon="material-icons">lock</md-icon>
+        <input name="senha" required ng-model="vm.user.senha" type="password">
+        <div ng-messages="loginForm.senha.$error" ng-if="loginForm.senha.$invalid || loginForm.$submitted">
+          <div ng-message="required">Esse campo é requerido.</div>
+        </div>
+      </md-input-container>
+      <div ng-if="vm.erro">
+        <span layout="row" md-colors="{color:'red-700'}" layout-align="center">{{vm.erro}}</span>
+      </div>
+      <md-input-container layout="row">
+        <md-button style="width: 100%" type="submit" class="md-raised md-primary" >Entrar</md-button>
+      </md-input-container>
+    </form>
+    </md-card-content>
+  </md-card>
+</md-content>
+
