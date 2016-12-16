@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-          .module('myApp')
-          .controller('LoginCtrl' , LoginCtrl);
+        .module('myApp')
+        .controller('LoginCtrl' , LoginCtrl);
 
     LoginCtrl.$inject = ["$scope","$http", "$location", "Usuario"];
 
@@ -16,7 +16,7 @@
           $http.post('api/autenticador/', vm.user).then(function(response){
             Usuario.addDados(response.data);
             // console.log(usuario.getDados());
-            $location.path('/admin');
+            $location.path('admin');
           }, function(errResponse){
             vm.erro = 'Erro usuario ou senha errados';
             console.log(vm.erro);

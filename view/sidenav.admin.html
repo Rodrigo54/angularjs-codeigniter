@@ -1,0 +1,127 @@
+<md-sidenav
+  class="md-sidenav-left fade"
+  md-component-id="left"
+  md-is-locked-open="isSideNavOpen"
+  ng-if="isSideNavOpen"
+  md-whiteframe="5"
+  layout="column">
+  <md-content md-scroll-y flex layout="column">
+    <md-toolbar class="md-hue-2">
+        <md-sidemenu class="margin-nav">
+        <md-sidemenu-group>
+        <h4 class="md-padding" ng-bind="usuario.nome"></h4>
+          <md-sidemenu-content md-icon="home" md-heading="Opções" md-arrow="true">
+            <md-sidemenu-button href="#">
+            <md-icon md-font-icon="material-icons">done</md-icon> Sent Mail
+            </md-sidemenu-button>
+            <md-sidemenu-button href="#">
+            <md-icon md-font-icon="material-icons">history</md-icon> History
+            </md-sidemenu-button>
+          </md-sidemenu-content>
+        </md-sidemenu-group>
+        </md-sidemenu>
+    </md-toolbar>
+
+<md-sidemenu>
+<md-sidemenu-group>
+    <md-sidemenu-button href="#">
+    <md-icon md-font-icon="material-icons">settings_input_svideo</md-icon>
+    Dashboard</md-sidemenu-button>
+    <md-sidemenu-content md-icon="apps" md-heading="Apps" md-arrow="true">
+      <md-sidemenu-button href="mailbox.html">Mailbox</md-sidemenu-button>
+      <md-sidemenu-button href="search.html">Search</md-sidemenu-button>
+      <md-sidemenu-button href="todo.html">Todo</md-sidemenu-button>
+    </md-sidemenu-content>
+    <md-sidemenu-content md-icon="code" md-heading="Components" md-arrow="true">
+        <md-sidemenu-button href="ui-accordions.html">Accordion</md-sidemenu-button>
+        <md-sidemenu-button href="ui-badges.html">Badges</md-sidemenu-button>
+        <md-sidemenu-button href="ui-buttons.html">Buttons</md-sidemenu-button>
+        <md-sidemenu-button href="ui-typography.html">Typography</md-sidemenu-button>
+        <md-sidemenu-button href="ui-cards.html">Cards</md-sidemenu-button>
+        <md-sidemenu-button href="ui-carousel.html">Carousel</md-sidemenu-button>
+        <md-sidemenu-button href="ui-chips.html">Chips</md-sidemenu-button>
+        <md-sidemenu-button href="ui-color.html">Color</md-sidemenu-button>
+        <md-sidemenu-button href="ui-collections.html">Collections</md-sidemenu-button>
+        <md-sidemenu-button href="ui-dropdown.html">Dropdown</md-sidemenu-button>
+        <md-sidemenu-button href="ui-dialogs.html">Dialogs</md-sidemenu-button>
+        <md-sidemenu-button href="ui-grid.html">Grid</md-sidemenu-button>
+        <md-sidemenu-button href="ui-helpers.html">Helpers</md-sidemenu-button>
+        <md-sidemenu-button href="ui-modals.html">Modals</md-sidemenu-button>
+        <md-sidemenu-button href="ui-media.html">Media</md-sidemenu-button>
+        <md-sidemenu-button href="ui-icons.html">Icons</md-sidemenu-button>
+        <md-sidemenu-button href="ui-parallax.html">Parallax</md-sidemenu-button>
+        <md-sidemenu-button href="ui-preloader.html">Preloader</md-sidemenu-button>
+        <md-sidemenu-button href="ui-shadow.html">Shadow</md-sidemenu-button>
+        <md-sidemenu-button href="ui-tabs.html">Tabs</md-sidemenu-button>
+        <md-sidemenu-button href="ui-waves.html">Waves</md-sidemenu-button>
+    </md-sidemenu-content>
+        <md-sidemenu-content md-icon="star_border" md-heading="Plugins" md-arrow="true">
+
+    <md-sidemenu-button href="miscellaneous-sweetalert.html">Sweet Alert</md-sidemenu-button>
+    <md-sidemenu-button href="miscellaneous-code-editor.html">Code Editor</md-sidemenu-button>
+    <md-sidemenu-button href="miscellaneous-nestable.html">Nestable List</md-sidemenu-button>
+    <md-sidemenu-button href="miscellaneous-masonry.html">Masonry</md-sidemenu-button>
+    <md-sidemenu-button href="miscellaneous-idle-timer.html">Idle Timer</md-sidemenu-button>
+
+    </md-sidemenu-content>
+    <md-sidemenu-content md-icon="desktop_windows" md-heading="Layouts" md-arrow="true">
+      <md-sidemenu-button href="layout-blank.html">Blank Page</md-sidemenu-button>
+      <md-sidemenu-button href="layout-boxed.html">Boxed Layout</md-sidemenu-button>
+      <md-sidemenu-button href="layout-hidden-sidebar.html">Hidden Sidebar</md-sidemenu-button>
+      <md-sidemenu-button href="layout-right-sidebar.html">Right Sidebar</md-sidemenu-button>
+    </md-sidemenu-content>
+    <md-sidemenu-content md-icon="mode_edit" md-heading="Forms" md-arrow="true">
+      <md-sidemenu-button href="form-elements.html">Form Elements</md-sidemenu-button>
+      <md-sidemenu-button href="form-wizard.html">Form Wizard</md-sidemenu-button>
+      <md-sidemenu-button href="form-upload.html">File Upload</md-sidemenu-button>
+      <md-sidemenu-button href="form-image-crop.html">Image Crop</md-sidemenu-button>
+      <md-sidemenu-button href="form-image-zoom.html">Image Zoom</md-sidemenu-button>
+      <md-sidemenu-button href="form-input-mask.html">Input Mask</md-sidemenu-button>
+      <md-sidemenu-button href="form-select2.html">Select2</md-sidemenu-button>
+    </md-sidemenu-content>
+
+    <md-sidemenu-content md-icon="grid_on" md-heading="Tables" md-arrow="true">
+      <md-sidemenu-button href="table-static.html">Static Tables</md-sidemenu-button>
+      <md-sidemenu-button href="table-responsive.html">Responsive Tables</md-sidemenu-button>
+      <md-sidemenu-button href="table-comparison.html">Comparison Table</md-sidemenu-button>
+      <md-sidemenu-button href="table-data.html">Data Tables</md-sidemenu-button>
+    </md-sidemenu-content>
+
+    <md-sidemenu-button href="charts.html">
+      <md-icon md-font-icon="material-icons">trending_up</md-icon> Charts
+    </md-sidemenu-button>
+
+
+    <md-sidemenu-content md-icon="my_location" md-heading="Maps" md-arrow="true">
+      <md-sidemenu-button href="maps-google.html">Google Maps</md-sidemenu-button>
+      <md-sidemenu-button href="maps-vector.html">Vector Maps</md-sidemenu-button>
+    </md-sidemenu-content>
+
+<md-sidemenu-content md-icon="tag_faces" md-heading="Extra Pages" md-arrow="true">
+  <md-sidemenu-button href="404.html">404 Page</md-sidemenu-button>
+  <md-sidemenu-button href="500.html">500 Page</md-sidemenu-button>
+  <md-sidemenu-button href="invoice.html">Invoice</md-sidemenu-button>
+  <md-sidemenu-button href="faq.html">FAQ</md-sidemenu-button>
+  <md-sidemenu-button href="sign-in.html">Sign In</md-sidemenu-button>
+  <md-sidemenu-button href="sign-up.html">Sign Up</md-sidemenu-button>
+  <md-sidemenu-button href="lock-screen.html">Lock Screen</md-sidemenu-button>
+  <md-sidemenu-button href="pattern-lock-screen.html">Pattern Lock Screen</md-sidemenu-button>
+  <md-sidemenu-button href="forgot.html">Forgot Password</md-sidemenu-button>
+  <md-sidemenu-button href="pricing-tables.html">Pricing Tables</md-sidemenu-button>
+  <md-sidemenu-button href="contact.html">Contact</md-sidemenu-button>
+  <md-sidemenu-button href="gallery.html">Gallery</md-sidemenu-button>
+  <md-sidemenu-button href="timeline.html">Timeline</md-sidemenu-button>
+  <md-sidemenu-button href="calendar.html">Calendar</md-sidemenu-button>
+  <md-sidemenu-button href="coming-soon.html">Coming Soon</md-sidemenu-button>
+</md-sidemenu-content>
+
+</md-sidemenu-group>
+<md-divider></md-divider>
+</md-sidemenu>
+
+<div layout-margin>
+    <p class="copyright">Rodrigo Alves ©</p>
+    <a href="#!">Privacy</a> &amp; <a href="#!">Terms</a>
+</div>
+</md-content>
+</md-sidenav>

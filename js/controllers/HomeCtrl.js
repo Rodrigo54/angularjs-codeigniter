@@ -5,27 +5,21 @@
         .module('myApp')
         .controller('HomeCtrl' , HomeCtrl);
 
-    HomeCtrl.$inject = ["$scope","$http","Usuario","$location", "dados"];
+    HomeCtrl.$inject = ["$scope", "Usuario", "dados"];
 
-    function HomeCtrl($scope, $http, Usuario, $location, dados) {
+    function HomeCtrl($scope, Usuario, dados) {
 
-      var vm = this;
-      vm.itens = {};
-      $scope.usuario = Usuario.getDados();
-      if (typeof dados.message !== 'undefined') {
-        vm.message = dados.message;
-      }
-      else{
-        vm.itens = dados;
-      }
+        var vm = this;
+        vm.itens = {};
 
-      vm.sair = function(){
-        $http.get('api/autenticador/sair', vm.user).then(function(response){
-          $location.path('/');
-        }, function(errResponse){
-          console.log(errResponse);
-        });
-      }
+        activate();
+
+        function activate() {
+            $scope.usuario = Usuario.getDados();
+            (typeof dados.message !== 'undefined') ?
+            vm.message = dados.message:
+            vm.itens = dados;
+        }
 
     }
 })();

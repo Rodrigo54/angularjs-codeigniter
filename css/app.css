@@ -1,6 +1,88 @@
 md-content.md-default-theme, md-content{
   background-color: transparent;
 }
-div[ng-view] {
+div[ui-view], body {
   background-color: #CFD8DC;
+}
+
+.nav-top{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.sidenav{
+  z-index: 5;
+}
+.main{
+  height: 100%;
+  width: 100%;
+}
+
+.margin-nav{
+  margin-top: 60px;
+}
+/* The starting CSS styles for the enter animation */
+.fade.ng-enter {
+    animation: slideInLeft 1s;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-leave {
+    animation: slideOutLeft 1s;
+}
+
+/* The starting CSS styles for the enter animation */
+.fade-main.ng-enter {
+    animation: slideOutRight 1s;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade-main.ng-leave {
+    animation: slideInRight 1s;
+}
+
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
 }
