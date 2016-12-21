@@ -1,3 +1,8 @@
+Esta e uma tradução do Readme do projeto [CodeIgniter Rest Server](https://github.com/chriskacerguis/codeigniter-restserver/)
+de [Chris Kacerguis](https://github.com/chriskacerguis)
+
+A tradução foi feita por [Daniel Coder](https://github.com/netofire) nesse fork [aqui](https://github.com/netofire/codeigniter-restserver/blob/master/README_pt_BR.MD)
+
 # CodeIgniter Rest Server
 
 Implementação completa de um servidor RESTful para CodeIgniter usando uma biblioteca, um arquivo config e um controller.
@@ -145,7 +150,7 @@ Você pode habilitar a autenticação básica setando `$config['rest_auth']` par
 $config['rest_valid_logins'] = ['username' => 'password', 'outra_pessoa' => 'seguro123'];
 ```
 
-Habilitar a autenticação do tipo 'digest' é igualmente simples. Configure os logins permitidos no arquivo de config, como acima e sete `$config['rest_auth']` para `'digest'`. A classe vai automaticamente enviar os cabeçalhos para habilitar a autenticação 'digest'. 
+Habilitar a autenticação do tipo 'digest' é igualmente simples. Configure os logins permitidos no arquivo de config, como acima e sete `$config['rest_auth']` para `'digest'`. A classe vai automaticamente enviar os cabeçalhos para habilitar a autenticação 'digest'.
 
 Se você está amarrando esta biblioteca em um endpoint AJAX, onde os clientes autenticam com sessões PHP, você provavelmente não vai gostar nem da autenticação básica nem da 'digest'. Neste caso, você pode dizer para a biblioteca REST qual variável de sessão PHP deve ser checada. Se a variável existir, o usuário está autorizado. É responsabilidade da sua aplicação setar tal variável. Vocẽ pode definir a variável em ``$config['auth_source']``.  Então, dizer à biblioteca para usar uma variável de sessão, setando ``$config['rest_auth']`` para ``session``.
 
@@ -159,7 +164,7 @@ $config['rest_ip_whitelist'] = '123.456.789.0, 987.654.32.1';
 
 Seus IPs locais (`127.0.0.1` e `0.0.0.0`) são permitidos por padrão.
 
-## Chaves de API 
+## Chaves de API
 
 Em adição aos métodos de autenticação acima, a classe `REST_Controller` tambpem suporta o uso de chaves API. Habilitar é simples. Habilite no seu arquivo **config/rest.php**:
 

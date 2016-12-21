@@ -10,7 +10,7 @@
         <md-sidemenu class="margin-nav">
         <md-sidemenu-group>
         <h4 class="md-padding" ng-bind="usuario.nome"></h4>
-          <md-sidemenu-content md-icon="home" md-heading="Opções" md-arrow="true">
+          <md-sidemenu-content md-icon="settings" md-heading="Opções" md-arrow="true">
             <md-sidemenu-button href="#">
             <md-icon md-font-icon="material-icons">done</md-icon> Sent Mail
             </md-sidemenu-button>
@@ -24,8 +24,8 @@
 
 <md-sidemenu>
 <md-sidemenu-group>
-    <md-sidemenu-button href="#">
-    <md-icon md-font-icon="material-icons">settings_input_svideo</md-icon>
+    <md-sidemenu-button ui-sref-active="active" ui-sref="home">
+    <md-icon md-font-icon="material-icons">home</md-icon>
     Dashboard</md-sidemenu-button>
     <md-sidemenu-content md-icon="apps" md-heading="Apps" md-arrow="true">
       <md-sidemenu-button href="mailbox.html">Mailbox</md-sidemenu-button>

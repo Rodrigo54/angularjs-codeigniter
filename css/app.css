@@ -5,6 +5,14 @@ div[ui-view], body {
   background-color: #CFD8DC;
 }
 
+md-sidemenu-button.active {
+    background-color: #3F51B5;
+    color: rgba(255, 255, 255, .8);
+    fill: rgba(255, 255, 255, .8);
+}
+md-sidemenu-button.active md-icon{
+  color: rgba(255, 255, 255, .8);
+}
 .nav-top{
   position: fixed;
   width: 100%;
@@ -14,6 +22,7 @@ div[ui-view], body {
 .sidenav{
   z-index: 5;
 }
+
 .main{
   height: 100%;
   width: 100%;
@@ -31,17 +40,6 @@ div[ui-view], body {
 .fade.ng-leave {
     animation: slideOutLeft 1s;
 }
-
-/* The starting CSS styles for the enter animation */
-.fade-main.ng-enter {
-    animation: slideOutRight 1s;
-}
-
-/* The finishing CSS styles for the enter animation */
-.fade-main.ng-leave {
-    animation: slideInRight 1s;
-}
-
 
 @keyframes slideOutLeft {
   from {

@@ -26,10 +26,10 @@
             });
         };
 
-
         function activate() {
             $scope.isSideNavOpen = true;
             $scope.usuario = Usuario.getDados();
         }
+
     }
 })();
