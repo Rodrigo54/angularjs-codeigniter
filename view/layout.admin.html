@@ -2,6 +2,6 @@
   <div ui-view="top" class="nav-top" flex></div>
   <md-content flex layout="row" layout-xs="column">
     <div ui-view="left" layout class="sidenav"></div>
-    <div ui-view layout flex class="margin-nav main"></div>
+    <div ui-view layout flex class="margin-nav main" ng-class="{leave: !isSideNavOpen}"></div>
   </md-content>
 </md-content>

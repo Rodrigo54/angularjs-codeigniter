@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "Projeto com finalidade educacional",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-sass": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrigo54/angularjs-codeigniter.git"
+  },
+  "keywords": [
+    "angularjs",
+    "codeigniter"
+  ],
+  "author": "Rodrigo Alves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rodrigo54/angularjs-codeigniter/issues"
+  },
+  "homepage": "https://github.com/Rodrigo54/angularjs-codeigniter#readme"
+}

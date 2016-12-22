@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="pt-br" ng-app='myApp'>
   <head>
-
     <title ng-bind="title"></title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- build:css style.min.css -->
     <link rel="stylesheet" href="lib/angular-material/angular-material.css">
     <link rel="stylesheet" href="lib/angular-material-sidemenu/dest/angular-material-sidemenu.css">
     <link rel="stylesheet" href="css/app.css">
+    <!-- /build -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- build:[href] /angularjs/ -->
     <base href="/" />
+    <!-- /build -->
   </head>
   <body layout="column" >
-
     <div ui-view ></div>
-
+    <!-- build:js libs.min.js -->
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="lib/angular-aria/angular-aria.min.js"></script>
@@ -24,11 +26,13 @@
     <script src="lib/angular-material/angular-material.min.js"></script>
     <script src="lib/ngstorage/ngStorage.min.js"></script>
     <script src="lib/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
-
+    <!-- /build -->
+    <!-- build:js app.min.js -->
     <script src="js/app.js" ></script>
     <script src="js/controllers/layoutAdminCtrl.js" ></script>
     <script src="js/controllers/HomeCtrl.js" ></script>
     <script src="js/controllers/LoginCtrl.js" ></script>
     <script src="js/services/UsuarioService.js" ></script>
+    <!-- /build -->
   </body>
 </html>

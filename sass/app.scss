@@ -1,0 +1,99 @@
+// @import "../lib/angular-material/angular-material.scss";
+// @import "../lib/angular-material-sidemenu/src/stylesheets/main.scss";
+
+$delay: 300ms;
+
+md-content.md-default-theme, md-content{
+  background-color: transparent;
+}
+
+div[ui-view], body {
+  background-color: #CFD8DC;
+}
+
+.md-sidemenu .md-button {
+    background-color: transparent;
+    &:hover{
+        border-style: solid;
+        border-left: 7px solid #283593;
+        background-color: rgba(255, 255, 255, .3);
+    }
+}
+
+.md-sidemenu-wrapper {
+  margin-top: -1020%;
+}
+
+md-sidemenu-button.active {
+    background-color: #3F51B5;
+    color: rgba(255, 255, 255, .8);
+    fill: rgba(255, 255, 255, .8);
+}
+md-sidemenu-button.active md-icon{
+  color: rgba(255, 255, 255, .8);
+}
+
+.nav-top{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.sidenav{
+  z-index: 5;
+}
+
+.main{
+  height: 100%;
+  width: 100%;
+  transition: padding-left $delay;
+  @media screen and (min-width: 960px){
+    padding-left: 325px;
+  }
+}
+.leave {
+  padding-left: 0;
+}
+
+.margin-nav{
+  margin-top: 60px;
+}
+
+.sidenav{
+    position: fixed !important;
+    .ng-enter {
+        animation: slideInLeft $delay;
+    }
+    .ng-leave {
+        visibility: visible;
+        animation: slideOutLeft $delay;
+    }
+    md-toolbar{
+        display: table;
+    }
+    .title{
+        display: inline-block;
+    }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

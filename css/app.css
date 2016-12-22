@@ -1,86 +1,71 @@
-md-content.md-default-theme, md-content{
-  background-color: transparent;
-}
+md-content.md-default-theme, md-content {
+  background-color: transparent; }
+
 div[ui-view], body {
-  background-color: #CFD8DC;
-}
+  background-color: #CFD8DC; }
+
+.md-sidemenu .md-button {
+  background-color: transparent; }
+  .md-sidemenu .md-button:hover {
+    border-style: solid;
+    border-left: 7px solid #283593;
+    background-color: rgba(255, 255, 255, 0.3); }
+
+.md-sidemenu-wrapper {
+  margin-top: -1020%; }
 
 md-sidemenu-button.active {
-    background-color: #3F51B5;
-    color: rgba(255, 255, 255, .8);
-    fill: rgba(255, 255, 255, .8);
-}
-md-sidemenu-button.active md-icon{
-  color: rgba(255, 255, 255, .8);
-}
-.nav-top{
+  background-color: #3F51B5;
+  color: rgba(255, 255, 255, 0.8);
+  fill: rgba(255, 255, 255, 0.8); }
+
+md-sidemenu-button.active md-icon {
+  color: rgba(255, 255, 255, 0.8); }
+
+.nav-top {
   position: fixed;
   width: 100%;
-  z-index: 10;
-}
+  z-index: 10; }
 
-.sidenav{
-  z-index: 5;
-}
+.sidenav {
+  z-index: 5; }
 
-.main{
+.main {
   height: 100%;
   width: 100%;
-}
+  transition: padding-left 300ms; }
+  @media screen and (min-width: 960px) {
+    .main {
+      padding-left: 325px; } }
 
-.margin-nav{
-  margin-top: 60px;
-}
-/* The starting CSS styles for the enter animation */
-.fade.ng-enter {
-    animation: slideInLeft 1s;
-}
+.leave {
+  padding-left: 0; }
 
-/* The finishing CSS styles for the enter animation */
-.fade.ng-leave {
-    animation: slideOutLeft 1s;
-}
+.margin-nav {
+  margin-top: 60px; }
+
+.sidenav {
+  position: fixed !important; }
+  .sidenav .ng-enter {
+    animation: slideInLeft 300ms; }
+  .sidenav .ng-leave {
+    visibility: visible;
+    animation: slideOutLeft 300ms; }
+  .sidenav md-toolbar {
+    display: table; }
+  .sidenav .title {
+    display: inline-block; }
 
 @keyframes slideOutLeft {
   from {
-    transform: translate3d(0, 0, 0);
-  }
-
+    transform: translate3d(0, 0, 0); }
   to {
     visibility: hidden;
-    transform: translate3d(-100%, 0, 0);
-  }
-}
+    transform: translate3d(-100%, 0, 0); } }
 
 @keyframes slideInLeft {
   from {
     transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-
+    visibility: visible; }
   to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    visibility: hidden;
-    transform: translate3d(100%, 0, 0);
-  }
-}
+    transform: translate3d(0, 0, 0); } }

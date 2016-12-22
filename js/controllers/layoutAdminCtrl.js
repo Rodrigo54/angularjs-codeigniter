@@ -5,10 +5,10 @@
         .module('myApp')
         .controller('layoutAdminCtrl', layoutAdminCtrl);
 
-    layoutAdminCtrl.$inject = ['$scope', '$http', '$location', 'Usuario'];
+    layoutAdminCtrl.$inject = ['$scope', '$http', '$location', '$mdMedia', 'Usuario'];
 
     /* @ngInject */
-    function layoutAdminCtrl($scope, $http, $location, Usuario) {
+    function layoutAdminCtrl($scope, $http, $location, $mdMedia, Usuario) {
         var vm = this;
         vm.title = 'Controller';
 
@@ -27,7 +27,9 @@
         };
 
         function activate() {
-            $scope.isSideNavOpen = true;
+            // console.log($mdMedia('gt-sm'));
+            // $scope.isSideNavOpen = true;
+            $scope.isSideNavOpen = $mdMedia('gt-sm');
             $scope.usuario = Usuario.getDados();
         }
 

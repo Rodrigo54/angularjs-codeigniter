@@ -1,5 +1,5 @@
 <md-sidenav
-  class="md-sidenav-left fade"
+  class="md-sidenav-left sidenav"
   md-component-id="left"
   md-is-locked-open="isSideNavOpen"
   ng-if="isSideNavOpen"
@@ -8,8 +8,8 @@
   <md-content md-scroll-y flex layout="column">
     <md-toolbar class="md-hue-2">
         <md-sidemenu class="margin-nav">
+        <h4 class="md-padding title" ng-bind="usuario.nome"></h4>
         <md-sidemenu-group>
-        <h4 class="md-padding" ng-bind="usuario.nome"></h4>
           <md-sidemenu-content md-icon="settings" md-heading="Opções" md-arrow="true">
             <md-sidemenu-button href="#">
             <md-icon md-font-icon="material-icons">done</md-icon> Sent Mail

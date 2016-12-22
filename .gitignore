@@ -16,6 +16,9 @@ api/vendor/
 api/user_guide/
 api/documentation/
 lib/
+node_modules/
+build/
+dist/
 
 # IDE Files
 #-------------------------
