@@ -12,7 +12,11 @@ div[ui-view], body {
     background-color: rgba(255, 255, 255, 0.3); }
 
 .md-sidemenu-wrapper {
-  margin-top: -1020%; }
+  margin-top: -1020%;
+  visibility: collapse;
+  transition-property: transform, opacity, margin, background, visibility; }
+  .md-sidemenu-wrapper.md-active {
+    visibility: visible; }
 
 md-sidemenu-button.active {
   background-color: #3F51B5;

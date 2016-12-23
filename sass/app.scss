@@ -22,6 +22,11 @@ div[ui-view], body {
 
 .md-sidemenu-wrapper {
   margin-top: -1020%;
+  visibility: collapse;
+  transition-property: transform, opacity, margin, background, visibility;
+  &.md-active {
+    visibility: visible;
+  }
 }
 
 md-sidemenu-button.active {
