@@ -166,7 +166,7 @@ Seus IPs locais (`127.0.0.1` e `0.0.0.0`) são permitidos por padrão.
 
 ## Chaves de API
 
-Em adição aos métodos de autenticação acima, a classe `REST_Controller` tambpem suporta o uso de chaves API. Habilitar é simples. Habilite no seu arquivo **config/rest.php**:
+Em adição aos métodos de autenticação acima, a classe `REST_Controller` também suporta o uso de chaves API. Habilitar é simples. Habilite no seu arquivo **config/rest.php**:
 
 ```php
 $config['rest_enable_keys'] = TRUE;

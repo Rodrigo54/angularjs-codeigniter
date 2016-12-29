@@ -5,10 +5,10 @@
         .module('myApp')
         .controller('layoutAdminCtrl', layoutAdminCtrl);
 
-    layoutAdminCtrl.$inject = ['$scope', '$http', '$location', '$mdMedia', 'Usuario'];
+    layoutAdminCtrl.$inject = ['$scope', '$http', '$location', '$mdMedia', 'Usuario', 'AuthService'];
 
     /* @ngInject */
-    function layoutAdminCtrl($scope, $http, $location, $mdMedia, Usuario) {
+    function layoutAdminCtrl($scope, $http, $location, $mdMedia, Usuario, AuthService) {
         var vm = this;
         vm.title = 'Controller';
 
@@ -19,7 +19,7 @@
         };
 
         vm.sair = function(){
-            $http.get('api/autenticador/sair', vm.user).then(function(response){
+            AuthService.signout().then(function(response){
               $location.path('/');
             }, function(errResponse){
               console.log(errResponse);

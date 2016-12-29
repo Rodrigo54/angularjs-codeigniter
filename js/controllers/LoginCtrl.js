@@ -5,15 +5,16 @@
         .module('myApp')
         .controller('LoginCtrl' , LoginCtrl);
 
-    LoginCtrl.$inject = ["$scope","$http", "$location", "Usuario"];
+    LoginCtrl.$inject = ["$scope","$http", "$location", "Usuario", "AuthService"];
 
-    function LoginCtrl($scope, $http, $location, Usuario) {
+    function LoginCtrl($scope, $http, $location, Usuario, AuthService) {
       var vm = this;
       vm.erro = null;
 
       vm.submit = function(){
         if ($scope.loginForm.$valid) {
-          $http.post('api/autenticador/', vm.user).then(function(response){
+          AuthService.signin(vm.user).then(function(response){
+            AuthService.setToken(response.data.token);
             Usuario.addDados(response.data);
             // console.log(usuario.getDados());
             $location.path('admin');

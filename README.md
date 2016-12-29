@@ -10,7 +10,7 @@
 * Single-page application (AngularJS)
 * Responsive (Angular Material)
 * API RESTful (CI Rest Server)
-* Autenticação de usuario
+* Autenticação de usuario (JWT - JSON Web Token)
 
 ##Sobre o Sistema
 
