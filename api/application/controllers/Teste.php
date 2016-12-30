@@ -13,7 +13,7 @@ class Teste extends CI_Controller {
     $usuario = $this->db->get('admin')->first_row();
 
     $key = $this->config->item('encryption_key');
-    $exp = strtotime("+2 hours");
+    $exp = strtotime("-2 hours");
     $iat = strtotime("now");
     $nbf = strtotime("+3 hours");
     $token = $this->jwt->encode(array(

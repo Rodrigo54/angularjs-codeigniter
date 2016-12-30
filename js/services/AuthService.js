@@ -16,13 +16,15 @@
             setToken: function (token) {
               $localStorage.token = token;
             },
+            deleteToken : function () {
+              delete $localStorage.token;
+              delete $localStorage.dados;
+              $q.when();
+            },
             signin : function (data) {
               return $http.post('api/autenticador/', data)
             },
             signout : function () {
-              delete $localStorage.token;
-              delete $localStorage.dados;
-              $q.when();
               return $http.get('api/autenticador/sair')
             },
             signup : function (data) {

@@ -10,7 +10,6 @@
     /* @ngInject */
     function layoutAdminCtrl($scope, $http, $location, $mdMedia, Usuario, AuthService) {
         var vm = this;
-        vm.title = 'Controller';
 
         activate();
 
@@ -20,9 +19,10 @@
 
         vm.sair = function(){
             AuthService.signout().then(function(response){
-              $location.path('/');
+                AuthService.deleteToken();
+                $location.path('/');
             }, function(errResponse){
-              console.log(errResponse);
+                console.log(errResponse);
             });
         };
 

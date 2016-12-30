@@ -12,7 +12,6 @@
 
       var addDados = function(obj) {
         var data = jwtDecode(obj.token);
-        console.log(data);
         dados.id = data.id;
         dados.nome = data.nome;
         dados.email = data.email;

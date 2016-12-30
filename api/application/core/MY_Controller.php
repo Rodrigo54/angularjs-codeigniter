@@ -5,12 +5,15 @@ require_once APPPATH . '/libraries/REST_Controller.php';
 
 class MY_Controller extends REST_Controller {
 
+    public $userdata;
+
     /*
     | verificação se existe um token
     | no header de Authorization
     | caso não exita ou não seja valido
     | emite erro unautorizado
     */
+
     public function early_checks()
     {
         try {
@@ -18,6 +21,7 @@ class MY_Controller extends REST_Controller {
           $token = $this->input->get_request_header('Authorization');
           $token = str_replace('Bearer ','',$token);
           $token = $this->jwt->decode($token, $key);
+          $this->userdata = $token;
         } catch (Exception $e) {
           $token = FALSE;
           $erro = 'Erro: '.$e->getMessage();
