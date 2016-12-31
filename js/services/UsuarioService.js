@@ -7,32 +7,34 @@
 
     Usuario.$inject = ["$localStorage", "$window"];
 
+    /* @ngInject */
     function Usuario($localStorage, $window){
-      var dados = {};
 
-      var addDados = function(obj) {
-        var data = jwtDecode(obj.token);
-        dados.id = data.id;
-        dados.nome = data.nome;
-        dados.email = data.email;
-        dados.admin = data.admin;
-        $localStorage.dados = dados;
-      };
+        this.addDados = addDados;
+        this.getDados = getDados;
 
-      var getDados = function(){
-        dados = $localStorage.dados;
-        return dados;
-      };
+        var dados = {};
 
-      var jwtDecode = function(token) {
-        var base64Url = token.split('.')[1];
-        var base64 = base64Url.replace('-', '+').replace('_', '/');
-        return JSON.parse($window.atob(base64));
-      }
+        ////////////////
 
-      return {
-        addDados: addDados,
-        getDados: getDados
-      };
+        function addDados(obj) {
+            var data = jwtDecode(obj.token);
+            dados.id = data.id;
+            dados.nome = data.nome;
+            dados.email = data.email;
+            dados.admin = data.admin;
+            $localStorage.dados = dados;
+        };
+
+        function getDados(){
+            dados = $localStorage.dados;
+            return dados;
+        };
+
+        function jwtDecode(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace('-', '+').replace('_', '/');
+            return JSON.parse($window.atob(base64));
+        };
     }
 })();

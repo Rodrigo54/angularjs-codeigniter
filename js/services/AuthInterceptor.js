@@ -13,24 +13,30 @@
 
     /* @ngInject */
     function AuthInterceptor($location, $localStorage, $q) {
-        return {
-            request: function(config) {
-              config.headers = config.headers || {};
+        var service = {
+            request: request,
+            responseError: responseError
+        };
 
-              if ($localStorage.token) {
-                config.headers['Authorization'] = 'Bearer ' + $localStorage.token;
-              }
+        return service;
 
-              return config;
-            },
+        ////////////////
 
-            responseError: function(response) {
-              if (response.status === 401 || response.status === 403) {
-                $location.path('/');
-              }
+        function request(config) {
+          config.headers = config.headers || {};
 
-              return $q.reject(response);
-            }
-        }
+          if ($localStorage.token) {
+            config.headers['Authorization'] = 'Bearer ' + $localStorage.token;
+          }
+
+          return config;
+        };
+
+        function responseError(response) {
+          if (response.status === 401 || response.status === 403) {
+            $location.path('/');
+          }
+          return $q.reject(response);
+        };
     }
 })();
