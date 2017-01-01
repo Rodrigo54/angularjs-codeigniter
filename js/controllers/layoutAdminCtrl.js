@@ -5,10 +5,10 @@
         .module('myApp')
         .controller('layoutAdminCtrl', layoutAdminCtrl);
 
-    layoutAdminCtrl.$inject = ['$scope', '$http', '$location', '$mdMedia', 'Usuario', 'AuthService'];
+    layoutAdminCtrl.$inject = ['$scope', '$location', '$mdMedia', 'AuthService'];
 
     /* @ngInject */
-    function layoutAdminCtrl($scope, $http, $location, $mdMedia, Usuario, AuthService) {
+    function layoutAdminCtrl($scope, $location, $mdMedia, AuthService) {
         var vm = this;
 
         activate();
@@ -19,7 +19,6 @@
 
         vm.sair = function(){
             AuthService.signout().then(function(response){
-                AuthService.deleteToken();
                 $location.path('/');
             }, function(errResponse){
                 console.log(errResponse);
@@ -30,7 +29,7 @@
             // console.log($mdMedia('gt-sm'));
             // $scope.isSideNavOpen = true;
             $scope.isSideNavOpen = $mdMedia('gt-sm');
-            $scope.usuario = Usuario.getDados();
+            $scope.usuario = AuthService.getUserData();
         }
 
     }
