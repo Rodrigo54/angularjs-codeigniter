@@ -15,7 +15,11 @@
 
     angular
       .module('myApp')
-      .config(['$mdThemingProvider', function($mdThemingProvider){
+      .config(config);
+
+    config.$inject = ['$mdThemingProvider'];
+
+    function config($mdThemingProvider){
         $mdThemingProvider.theme('default')
           .primaryPalette('indigo',{
             'default': '500'
@@ -25,5 +29,5 @@
           })
           .warnPalette('red')
           .backgroundPalette('grey');
-    }]);
+    };
 })();

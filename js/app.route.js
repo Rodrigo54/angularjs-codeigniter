@@ -2,8 +2,12 @@
     'use strict';
 
     angular
-      .module('myApp')
-      .config(['$locationProvider','$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider){
+        .module('myApp')
+        .config(router);
+
+    router.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+
+    function router($locationProvider, $stateProvider, $urlRouterProvider){
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
 
@@ -42,14 +46,18 @@
         });
 
         $urlRouterProvider.otherwise('/');
-    }]);
+    };
 
     angular
-      .module('myApp')
-      .run(['$location', '$rootScope', function($location, $rootScope) {
+        .module('myApp')
+        .run(runBlock);
+
+    runBlock.$inject = ['$location', '$rootScope'];
+
+    function runBlock($location, $rootScope){
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $rootScope.title = toState.title;
         });
-    }]);
+    }
 
 })();

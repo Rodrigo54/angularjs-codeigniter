@@ -5,7 +5,7 @@ class Eventos extends MY_Controller {
 
   public function index_get()
   {
-    $this->db->where('titulo', 'oi');
+    // $this->db->where('titulo', 'oi');
     $dados = $this->db->get('eventos');
 
     if ($dados->result())
