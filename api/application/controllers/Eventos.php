@@ -8,6 +8,7 @@ class Eventos extends MY_Controller {
     // $this->db->where('titulo', 'oi');
     $dados = $this->db->get('eventos');
 
+    // sleep(5);
     if ($dados->result())
     {
       $this->response($dados->result(), REST_Controller::HTTP_OK);
