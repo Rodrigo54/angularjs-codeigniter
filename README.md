@@ -17,7 +17,7 @@
 * Feito em PHP 7
 * Banco de Dados MySQL
 * Framework Codeigniter 3.1.0
-* Hospedado em [rodrigom.tk/angularjs](http://rodrigom.tk/angularjs/)
+* Hospedado em [rodrigoalves.me/angularjs](http://rodrigoalves.me/angularjs/)
 
 ##Sobre o Desenvolvimento
 
