@@ -6,6 +6,7 @@ require_once APPPATH . '/libraries/REST_Controller.php';
 class MY_Controller extends REST_Controller {
 
     public $userdata;
+    public $debug = false;
 
     /*
     | verificação se existe um token
@@ -26,7 +27,7 @@ class MY_Controller extends REST_Controller {
           $token = FALSE;
           $erro = 'Erro: '.$e->getMessage();
         }
-        if ($token == FALSE) {
+        if ($token == FALSE && $this->debug == false) {
           $this->response([
            'status' => FALSE,
            'message' => $erro

@@ -3,15 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Eventos extends MY_Controller {
 
+    public function __construct()
+    {
+        // $this->debug = true;
+        parent::__construct();
+        $this->load->model('Admin_model', 'admin');
+    }
+
   public function index_get()
   {
     // $this->db->where('titulo', 'oi');
-    $dados = $this->db->get('eventos');
+
+    $dados = $this->admin->getEventos();
 
     // sleep(5);
-    if ($dados->result())
+    if ($dados)
     {
-      $this->response($dados->result(), REST_Controller::HTTP_OK);
+      $this->response($dados, REST_Controller::HTTP_OK);
     }
     else
     {

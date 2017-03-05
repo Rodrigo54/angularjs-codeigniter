@@ -535,7 +535,7 @@ $config['rest_language'] = 'portuguese-brazilian';
 | will access it through a browser
 |
 */
-$config['check_cors'] = FALSE;
+$config['check_cors'] = true;
 
 /*
 |--------------------------------------------------------------------------
@@ -550,7 +550,8 @@ $config['allowed_cors_headers'] = [
   'X-Requested-With',
   'Content-Type',
   'Accept',
-  'Access-Control-Request-Method'
+  'Access-Control-Request-Method',
+  'Authorization'
 ];
 
 /*
@@ -579,7 +580,7 @@ $config['allowed_cors_methods'] = [
 | source domain
 |
 */
-$config['allow_any_cors_domain'] = FALSE;
+$config['allow_any_cors_domain'] = true;
 
 /*
 |--------------------------------------------------------------------------
