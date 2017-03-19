@@ -5,10 +5,10 @@
         .module('myApp')
         .factory('EventosService', EventosService);
 
-    EventosService.$inject = ['$q', '$http'];
+    EventosService.$inject = ['$q', '$http','config'];
 
     /* @ngInject */
-    function EventosService($q, $http) {
+    function EventosService($q, $http, config) {
 
         var service = {
             getDados: getDados
@@ -19,7 +19,7 @@
 
         function getDados() {
             var deferred = $q.defer();
-            $http.get('api/eventos/').then(function(response) {
+            $http.get(config.apiUrl+'eventos/').then(function(response) {
               deferred.resolve(response.data);
             }, function(errResponse){
               if(errResponse.status == 404){

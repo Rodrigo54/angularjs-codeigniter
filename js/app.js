@@ -30,4 +30,13 @@
           .warnPalette('red')
           .backgroundPalette('grey');
     };
+
+    angular
+    .module('myApp')
+    .constant('config', {
+      // apiUrl: 'https://rodrigoalves.me/api/',
+      apiUrl: window.location.host == 'angularjs' ? 'http://angularjs/api/' : 'https://rodrigoalves.me/api/',
+      baseUrl: '/',
+      enableDebug: true
+    });
 })();

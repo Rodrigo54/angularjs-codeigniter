@@ -5,10 +5,10 @@
         .module('myApp')
         .factory('AuthService', AuthService);
 
-    AuthService.$inject = ['$http', '$localStorage', '$q', '$window'];
+    AuthService.$inject = ['$http', '$localStorage', '$q', '$window', 'config'];
 
     /* @ngInject */
-    function AuthService($http, $localStorage, $q, $window) {
+    function AuthService($http, $localStorage, $q, $window, config) {
 
         var userData = {};
         var service = {
@@ -57,7 +57,7 @@
 
         function signin(data) {
             var deferred = $q.defer();
-            $http.post('api/autenticador/', data).then(function(response) {
+            $http.post(config.apiUrl+'autenticador/', data).then(function(response) {
                 setToken(response.data.token);
                 setUserData(response.data);
                 deferred.resolve(response.data);
@@ -70,7 +70,7 @@
         };
 
         function signout() {
-            return $http.get('api/autenticador/sair').then(function(response) {
+            return $http.get(config.apiUrl+'autenticador/sair').then(function(response) {
                 deleteToken();
                 return response.data;
             }, function(errResponse){
@@ -79,7 +79,7 @@
         };
 
         function signup(data) {
-          return $http.post('api/cadastro', data)
+          return $http.post(config.apiUrl+'cadastro', data)
         };
     }
 })();

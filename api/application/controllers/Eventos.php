@@ -10,11 +10,15 @@ class Eventos extends MY_Controller {
         $this->load->model('Admin_model', 'admin');
     }
 
-  public function index_get()
+  public function index_get($id = null)
   {
-    // $this->db->where('titulo', 'oi');
-
-    $dados = $this->admin->getEventos();
+    // $this->db->where('e.titulo', 'oi');
+     if ($id){
+        $dados = $this->admin->getEventos($id);
+        $dados ? $dados->alunosInscritos = $this->admin->lista_usuarios_evento($id) : null ;
+     } else {
+        $dados = $this->admin->getEventos();
+     }
 
     // sleep(5);
     if ($dados)
